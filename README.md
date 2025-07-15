@@ -4,7 +4,7 @@
 Ilya Kaufman, Omri Azencot — Ben‑Gurion University
 
 <p align="center">
-  <img src="figures/soma.png" width="78%" alt="Original vs. first‑ and second‑order sampling"/>
+  <img src="figures/sinus.png" width="78%" alt="Original vs. first‑ and second‑order sampling"/>
   <br><em>Figure&nbsp;1 – CEMS (right) follows the sine manifold, while first‑order sampling drifts off.</em>
 </p>
 
@@ -20,7 +20,7 @@ Instead of mixing samples in raw Euclidean space (Mixup) or first‑order tangen
 ---
 
 ## Repository layout
-This repo keeps the folder structure of **[C‑Mixup](https://github.com/huaxiuyao/C-Mixup)**, minus the Echonet/PovertyMap datasets:
+This repo keeps the folder structure of **[C‑Mixup](https://github.com/huaxiuyao/C-Mixup)**:
 
 ```
 CEMS/
