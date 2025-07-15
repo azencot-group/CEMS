@@ -1,11 +1,9 @@
 # Curvature Enhanced Manifold Sampling (CEMS)
-**Official PyTorch implementation of the ICML 2025 paper  
-“Curvature Enhanced Data Augmentation for Regression”**  
-Ilya Kaufman, Omri Azencot — Ben‑Gurion University
+**Official PyTorch implementation of the ICML 2025 paper “Curvature Enhanced Data Augmentation for Regression”**  
 
 <p align="center">
-  <img src="figures/sinus.png" width="78%" alt="Original vs. first‑ and second‑order sampling"/>
-  <br><em>Figure&nbsp;1 – CEMS (right) follows the sine manifold, while first‑order sampling drifts off.</em>
+  <img src="figures/sinus.png" width="78%" alt="Toy sine sampling comparison"/>
+  <br><em>Figure&nbsp;1. We demonstrate the effect of sampling from a one‑dimensional manifold embedded in a two‑dimensional space. <strong>A)</strong> The original data representing a sine wave where the color of each point encodes curvature (brighter&nbsp;=&nbsp;higher curvature). <strong>B)</strong> Sampling using FOMA. <strong>C)</strong> Sampling using a first‑order approximation. <strong>D)</strong> Sampling using CEMS (our approach).</em>
 </p>
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
@@ -16,6 +14,11 @@ Ilya Kaufman, Omri Azencot — Ben‑Gurion University
 ## 📑 Overview
 CEMS is a **second‑order, curvature‑aware data‑augmentation method for regression models**.  
 Instead of mixing samples in raw Euclidean space (Mixup) or first‑order tangent space (FOMA), we locally fit a quadratic map to the data manifold and **sample directly on that surface**.
+
+<p align="center">
+  <img src="figures/manifold.png" width="78%" alt="Manifold sampling pipeline"/>
+  <br><em>Figure&nbsp;2. CEMS forms a neighborhood for every point <i>z</i> (left), computes a basis <i>B<sup>T</sup><sub>u</sub></i> for the tangent space via SVD (middle) while obtaining an estimate for the embedding <i>f</i>, samples a new point <span style='font-family:serif;'>η</span> close to <i>u</i> (right), and un‑projects it back to <i>ℝ<sup>D</sup></i> using <i>f</i> (red arrow).</em>
+</p>
 
 ---
 
